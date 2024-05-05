@@ -4,47 +4,47 @@ variable "db_name" {
 }
 
 variable "db_user" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "db_password" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 
 variable "yc_token" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "yc_cloud_id" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "yc_folder_id" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "compute_default_zone" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "datadog_api_key" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "datadog_app_key" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "admin_ssh_key" {
-  type    = string
+  type      = string
   sensitive = true
 }
