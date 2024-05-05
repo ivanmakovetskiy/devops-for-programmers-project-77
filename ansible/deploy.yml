@@ -1,0 +1,19 @@
+- hosts: all
+  tasks:
+    - name: Start application using Docker with environment file
+      ansible.builtin.template:
+        src: .env.j2
+        dest: .env
+        mode: '0644'
+
+    - name: Start Redmine
+      community.docker.docker_container:
+        name: redmine
+        image: "redmine:latest"
+        restart_policy: always
+        state: started
+        env_file: .env
+        ports: "80:3000"
+    - name: Monitoring
+      roles:
+        - { role: datadog.datadog, become: true } 

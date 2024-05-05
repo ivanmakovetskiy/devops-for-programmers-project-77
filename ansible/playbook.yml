@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: yes
+
+- name: Prepare servers
+  ansible.builtin.import_playbook: prepare.yml
+
+- name: Deploy project
+  ansible.builtin.import_playbook: deploy.yml

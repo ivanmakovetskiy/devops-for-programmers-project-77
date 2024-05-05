@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  become: true  # Apply privilege escalation to the whole play
+
+  roles:
+    - role: geerlingguy.pip  # Use the geerlingguy.pip role to install pip
+      become: true
+    - role: geerlingguy.docker  # Use the geerlingguy.docker role to install Docker
+      become: true
+      docker_users: ubuntu
+    - role: datadog.datadog
+      become: true
+
+  vars:
+    pip_install_packages:
+      - docker  # Install the Docker Python package
